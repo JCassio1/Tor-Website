@@ -1,0 +1,87 @@
+<html>
+<link rel="stylesheet" href="style.css">
+<head>
+<title>JD's Tor</title>
+
+</head>
+<body>
+
+  <p style="text-align:center;"><img src="bandeira-angola.png" alt="Angola" width="200" height="200"></p>
+
+  <p> <p>
+<center>
+  <div class="paragraph">
+
+  </div>
+<h2>Seja bem-vindo(a) ao meu primeiro website na network TOR</h2>
+<p> <p>
+<p align="center"> Criei esta p&aacute;gina com o intuito de mostrar que a rede Tor n&atilde;o serve apenas para atividades nefastas. E por outro lado, porque sempre tive uma curiosidade em saber como servi&ccedil;os secretos (websites) s&atilde;o criados no tor e como variam de um website comum da internet normal<p>
+</div>
+</center>
+
+<p> <p>
+
+
+
+<script>
+function myfunction() {
+  var first = document.getElementById("textbox1").value;
+  var second = document.getElementById("textbox2").value;
+  var answer = "Ola" + " " + first + " " + "disseste" + " " + second;
+
+  var textbox3 = document.getElementById('textbox3');
+  textbox3.value = answer;
+}
+
+function mylert(){
+  alert("Agradeco por visitares esta pagina. Abracos, JD ;)");
+}
+
+function WriteToFile(passForm) {
+
+    set fso = CreateObject("Scripting.FileSystemObject");
+    set s   = fso.CreateTextFile("http://localhost:8080/Torfiles/formdata.txt", True);
+
+    var name = document.getElementById('name');
+    var messageToTor  = document.getElementById('messageToTor');
+
+    s.writeline("Name :" + name);
+    s.writeline("Message :" + messageToTor);
+
+    s.writeline("-----------------------------");
+    s.Close();
+ }
+</script>
+
+<br>
+<br>
+    <div class="container">
+          <div class="fixed"></div>
+            <form action="action.php" method="post">
+                Qual &eacute; o seu nome?<br>
+                <input type="text" name="field1" placeholder="ex. Jessica/Miguel" required><br>
+                <br>Que mensagem gostaria de deixar?<br>
+                  <input type="text" name="field2" placeholder="ex. Estive aqui" required><br>
+                 <br><input type="submit" onclick="mylert(); print()" value="Bora!">
+              </form>
+          <div class="flex-item"></div>
+          <div>
+          <h2>Quem j&aacute; visitou este website</h2>
+
+            <iframe id="textfile" src="data.txt" width="600" height="400"></iframe>
+
+          <script type="text/javascript">
+            function print() {
+                var iframe = document.getElementById('textfile');
+                iframe.contentWindow.print();
+            }
+          </script>
+          <div>
+            <button onclick="print()">Imprimir</button>
+          </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
